@@ -28,7 +28,7 @@ var DateTimePickerTime = onClickOutside( createClass({
 		}
 
 		var hours = date.format( 'H' );
-		
+
 		var daypart = false;
 		if ( this.state !== null && this.props.timeFormat.toLowerCase().indexOf( ' a' ) !== -1 ) {
 			if ( this.props.timeFormat.indexOf( ' A' ) !== -1 ) {
@@ -145,7 +145,7 @@ var DateTimePickerTime = onClickOutside( createClass({
 
 	updateMilli: function( e ) {
 		var milli = parseInt( e.target.value, 10 );
-		if ( milli === e.target.value && milli >= 0 && milli < 1000 ) {
+		if ( milli === +e.target.value && milli >= 0 && milli < 1000 ) {
 			this.props.setTime( 'milliseconds', milli );
 			this.setState( { milliseconds: milli } );
 		}
